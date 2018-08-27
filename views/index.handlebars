@@ -1,0 +1,56 @@
+<!--Start of the main container-->
+<div class="container">
+    <div class="col-md-12">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Fluid jumbotron</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/burger.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Available Burgers</h4>
+                        <hr>
+                        <ul class="list-unstyled">
+                            {{#each burger}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/devouredburger.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Devoured Burgers</h4>
+                        <hr>
+                        <ul class="list-unstyled">
+                            {{#each burger}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/customorder.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Special Request</h4>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                                <h6>What kind of burger do you want?</h6>
+                                <input class="form-control" id="newBurgerName" type="text" placeholder="Default input">
+                                <br>
+                                <button type="button" class="btn btn-info" id="makeBurger">Order It!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

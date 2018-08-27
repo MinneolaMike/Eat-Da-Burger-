@@ -2,23 +2,23 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-    selectAll: function (cb) {
-        orm.all("burgers", function (res) {
+    all: function (cb) {
+        orm.selectAll("burgers" , function (res) {
             cb(res);
         });
     },
     // The variables cols and vals are arrays.
-    insertOne: function (cols, vals, cb) {
-        orm.create("burgers", cols, vals, function (res) {
+    create: function (val, cb) {
+        orm.insertOne("burgers", "burger_name", val, function (res) {
             cb(res);
         });
     },
-    updateOne: function (objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function (res) {
+    update: function (id, val, cb) {
+        orm.updateOne("burgers", "devoured", val, id, function (res) {
             cb(res);
         });
     },
 };
 
-// Export the database functions for the controller (catsController.js).
+// Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;
