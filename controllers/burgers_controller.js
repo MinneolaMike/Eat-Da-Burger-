@@ -24,10 +24,11 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id=" + req.params.id;
+  var condition = "id = " + req.params.id;
   burger.update(
     {
-      devoured: req.body.devoured
+      // burger_name: req.body.burger_name,
+      devoured : req.body.devoured
     },
     condition, function (result) {
     if (result.changedRows == 0) {

@@ -13,12 +13,13 @@ var burger = {
             cb(res);
         });
     },
-    update: function (id, val, cb) {
-        orm.updateOne("burgers", "devoured", val, id, function (res) {
-            cb(res);
+    update: function(colVal, condition, cb) {
+        orm.updateOne("burgers", colVal, condition, function(res) {
+          cb(res);
         });
-    },
+      },
 };
 
 // Export the database functions for the controller (burgers_controller.js).
 module.exports = burger;
+
