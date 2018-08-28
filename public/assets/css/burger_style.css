@@ -1,0 +1,33 @@
+.jumbotron {
+    font-family: 'Luckiest Guy', cursive;
+    color: azure;
+    text-align: center;
+    background: transparent;
+}
+
+.jumbo-title{
+    font-size: 8rem;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+body { 
+    background: url(../images/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.card {
+    background: transparent;
+    border: none;
+
+}
+
+.card-body {
+    background-color: azure;
+}
+
+.card-title {
+    text-align: center;
+}
